@@ -1,0 +1,20 @@
+.checklist{
+    position: relative;
+    top: 3px;
+    left: 3px;
+}
+.label_select {
+    font-size: 0.9rem;
+}
+.text_task{
+    font-size: 0.9rem;
+    width: 83%;
+    display: inline;
+}
+#add_task{
+    top: 2px;
+    width: 15%;
+    display: inline;
+    position: relative;
+    height: 36px;
+}
