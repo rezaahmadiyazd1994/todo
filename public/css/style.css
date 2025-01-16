@@ -4,17 +4,21 @@
     left: 3px;
 }
 .label_select {
-    font-size: 0.9rem;
+    font-size: 14px;
 }
 .text_task{
-    font-size: 0.9rem;
+    font-size: 14px;
     width: 83%;
     display: inline;
 }
 #add_task{
-    top: 2px;
     width: 15%;
     display: inline;
-    position: relative;
-    height: 36px;
+    height: 31px;
+}
+#delete_task{
+    width: 30px;
+    position: absolute;
+    left: 2px;
+    top: 1px;
 }

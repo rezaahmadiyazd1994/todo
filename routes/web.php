@@ -37,3 +37,7 @@ Route::post('/update_task_to_0/{id}', function($id){
     DB::table('todo')->where('id', $id)->update(['do' => 0]);
     return redirect()->back();
 });
+Route::post('/delete_task/{id}', function($id){
+    DB::table('todo')->where('id', $id)->update(['delete' => 1]);
+    return redirect()->back();
+});
