@@ -78,7 +78,7 @@
             <div>
                 <form action="save_task" method="post">
                     @csrf
-                    <input type="text" class="form-control text_task border-light" id="new-task"
+                    <input type="text" class="form-control text_task border-light" required id="new-task"
                         placeholder="افزودن وظیفه" name="new-task">
                     <button class="form-control btn btn-light" id="add_task">
                         <span class="glyphicon glyphicon-plus"></span>
@@ -110,7 +110,7 @@
                         <form action="delete_task/{{ @$todo->id }}" method="post">
                             @csrf
                             <button class="form-control btn btn-danger" id="delete_task" type="submit">
-                                <span class="glyphicon glyphicon-trash"></span>
+                                <span class="glyphicon glyphicon-remove"></span>
                             </button>
                         </form>
                     </li>
@@ -144,7 +144,7 @@
                         <form action="delete_task/{{ @$do_todo->id }}" method="post">
                             @csrf
                             <button class="form-control btn btn-danger" id="delete_task" type="submit">
-                                <span class="glyphicon glyphicon-trash"></span>
+                                <span class="glyphicon glyphicon-remove"></span>
                             </button>
                         </form>
                     </li>
