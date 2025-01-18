@@ -154,6 +154,11 @@
         </div>
     </div>
 
+
+    <!-- Save task with ajax-->
+    <script href="js/save_task.js"></script>
+
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

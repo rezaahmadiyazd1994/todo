@@ -1,10 +1,15 @@
 <?php
 
-use App\Http\Controllers\TodoController;
+namespace App\Http\Controllers;
+
+
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use Illuminate\Http\Redirect;
+use App\Http\Controllers;
+
+use App\Http\Controllers\TaskController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,27 +22,15 @@ use Illuminate\Http\Redirect;
 |
 */
 
-Route::get('/', function(){
-    $todos = DB::table('todo')->where('do',0)->where('delete',0)->get();
-    $do_todos = DB::table('todo')->where('do',1)->where('delete',0)->get();
-    return view('index',compact('todos','do_todos'));
-});
-Route::post('/save_task', function(Request $request){
-    $new_task = $request->input('new-task');
-    DB::table('todo')->insert([
-        'task' => $new_task
-    ]);
-    return redirect()->back();
-});
-Route::post('/update_task_to_1/{id}', function($id){
-    DB::table('todo')->where('id', $id)->update(['do' => 1]);
-    return redirect()->back();
-});
-Route::post('/update_task_to_0/{id}', function($id){
-    DB::table('todo')->where('id', $id)->update(['do' => 0]);
-    return redirect()->back();
-});
-Route::post('/delete_task/{id}', function($id){
-    DB::table('todo')->where('id', $id)->update(['delete' => 1]);
-    return redirect()->back();
-});
+
+Route::get('/',TaskController::class . '@Index');
+
+Route::post('/save_task', TaskController::class . '@Save');
+
+Route::post('/update_task_to_1/{id}', TaskController::class . '@update_task_to_1');
+
+Route::post('/update_task_to_0/{id}', TaskController::class . '@update_task_to_0');
+
+Route::post('/delete_task/{id}', TaskController::class . '@Delete');
+
+
